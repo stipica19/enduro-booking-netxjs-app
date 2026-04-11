@@ -38,6 +38,8 @@ jobs:
           tags: ghcr.io/${{ github.repository }}:latest
           build-args: |
             NODE_OPTIONS=--max-old-space-size=2048
+            NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+            NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=${{ secrets.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

@@ -6,7 +6,7 @@ WORKDIR /app
 # --- Dependencies faza ---
 FROM base AS deps
 COPY package.json package-lock.json* ./
-RUN npm ci --frozen-lockfile
+RUN npm ci
 
 # --- Builder faza ---
 FROM base AS builder

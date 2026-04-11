@@ -5,7 +5,7 @@ import Script from "next/script";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -114,7 +114,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <Script
           id="ms-clarity"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
                 (function(c,l,a,r,i,t,y){

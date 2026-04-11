@@ -1,11 +1,13 @@
-import About from "@/components/About";
-import AboutBosna from "@/components/AboutBosna";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import Motorcycles from "@/components/Motorcycles";
-import Rules from "@/components/Rules";
-import SliderImage from "@/components/SliderImage";
-import Tour from "@/components/Tour";
-import Unterkunft from "@/components/Unterkunft";
+import About from "@/components/About";
+
+const SliderImage = dynamic(() => import("@/components/SliderImage"), { ssr: false });
+const Tour = dynamic(() => import("@/components/Tour"));
+const AboutBosna = dynamic(() => import("@/components/AboutBosna"), { ssr: false });
+const Unterkunft = dynamic(() => import("@/components/Unterkunft"), { ssr: false });
+const Motorcycles = dynamic(() => import("@/components/Motorcycles"));
+const Rules = dynamic(() => import("@/components/Rules"));
 import { useTranslations } from "next-intl";
 
 import type { Metadata } from "next";

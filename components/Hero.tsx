@@ -10,19 +10,16 @@ const Hero = () => {
     <section className="relative w-screen h-[98vh] overflow-hidden">
       {/* Background Image - full viewport width */}
       <div className="absolute inset-0 -z-10">
-        <picture>
-          <source media="(max-width: 768px)" srcSet="/hero-bild-mobile.webp" />
-          <Image
-            src="/hero-bild.webp"
-            alt="Enduro Drift Bosnien – Enduro Touren in Bosnien"
-            fill
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            quality={70}
-            className="object-cover object-center"
-          />
-        </picture>
+        <Image
+          src="/hero-bild.webp"
+          alt="Enduro Drift Bosnien – Enduro Touren in Bosnien"
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={80}
+          className="object-cover object-center"
+        />
       </div>
       {/* Dark gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent -z-10" />

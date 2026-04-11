@@ -60,6 +60,7 @@ const About = () => {
               loop
               muted
               playsInline
+              preload="none"
               aria-label={t("about_image_alt")}
               poster="/ckalja-motor.webp"
             >

@@ -1,10 +1,9 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/effect-fade";
 import Image from "next/image";
 
 const slides = [
@@ -51,6 +50,7 @@ export default function SliderImage() {
                     fill
                     style={{ objectFit: "cover" }}
                     loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="shadow-lg"
                   />
                 </div>

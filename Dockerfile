@@ -1,4 +1,4 @@
-# Multi-stage build za Next.js standalone mode
+# Multi-stage build za Next.js
 FROM node:22-alpine AS base
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
@@ -17,20 +17,21 @@ COPY . .
 ARG NODE_OPTIONS="--max-old-space-size=2048"
 ENV NODE_OPTIONS=$NODE_OPTIONS
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV TURBOPACK=0
 
 RUN npm run build
 
-# --- Production faza (standalone) ---
+# --- Production faza ---
 FROM node:22-alpine AS runner
 WORKDIR /app
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Standalone build sadrži sve dependencies unutar sebe
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 
 USER nextjs
 
@@ -41,8 +42,7 @@ ENV HOSTNAME="0.0.0.0"
 
 EXPOSE 3000
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
     CMD node -e "require('http').get('http://localhost:3000', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
-# standalone generira server.js u root direktoriju
-CMD ["node", "server.js"]
+CMD ["node_modules/.bin/next", "start"]

@@ -1,8 +1,7 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const forwardedFor = req.headers.get("x-forwarded-for") || "";
     const ip = forwardedFor.split(",")[0]?.trim();

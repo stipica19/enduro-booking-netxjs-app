@@ -4,8 +4,6 @@ import Anmeldung from "../../../models/Anmeldung";
 import { Resend } from "resend";
 import Tour from "@/models/Tour";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function GET() {
   try {
     await connectMongo();
@@ -28,6 +26,7 @@ export async function GET() {
 }
 
 export async function POST(req) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     await connectMongo();
     const body = await req.json();

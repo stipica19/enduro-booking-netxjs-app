@@ -2,7 +2,6 @@
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
 
-@reference "tailwindcss";
 @config "../tailwind.config.ts";
 
 @tailwind base;

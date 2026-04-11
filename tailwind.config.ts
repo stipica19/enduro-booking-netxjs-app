@@ -35,7 +35,6 @@ module.exports = {
           50: "#FEC601",
         },
       },
-     
       screens: {
         xs: "400px",
         "3xl": "1680px",

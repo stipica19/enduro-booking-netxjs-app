@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Probaj bez standalone først
-  // output: 'standalone',
+  output: 'standalone',
 
   // Kompresija
   compress: true,
@@ -19,7 +18,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ['image/webp'],
     // Ograničava veličinu slika za memoriju
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 3600,
   },
 
   // Environment varijable

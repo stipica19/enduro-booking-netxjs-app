@@ -51,8 +51,6 @@ export default function AnmeldungClient() {
       rentaBike,
     };
 
-    console.log(formData);
-
     try {
       const res = await fetch("/api/anmeldung", {
         method: "POST",
@@ -70,8 +68,7 @@ export default function AnmeldungClient() {
       } else {
         setError(`Fehler: ${result.message}`);
       }
-    } catch (error) {
-      console.error("Fehler beim Senden:", error);
+    } catch {
       setError("Es gab ein Problem bei der Anmeldung.");
     } finally {
       setLoading(false);

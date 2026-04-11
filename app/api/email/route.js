@@ -47,7 +47,6 @@ export async function POST(req) {
       }
     }
 
-    console.log("Kontakt poruka:", name, message);
     const response = await resend.emails.send({
       from: `Enduro Drift Bosnien <info@endurodriftbosnien.com>`,
       to: ["endurodriftbosnien@gmail.com"],
@@ -103,7 +102,7 @@ export async function POST(req) {
   `,
     });
     return Response.json({ success: true, data: response });
-  } catch (error) {
-    return Response.json({ error: error.message }, { status: 500 });
+  } catch {
+    return Response.json({ error: "Server error." }, { status: 500 });
   }
 }

@@ -30,9 +30,9 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { message: "Server error", error },
+      { message: "Server error" },
       { status: 500 }
     );
   }

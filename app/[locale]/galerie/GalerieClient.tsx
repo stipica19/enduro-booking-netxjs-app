@@ -39,8 +39,8 @@ export default function GalerieClient() {
         const res = await fetch("/api/gallery");
         const data: ApiItem[] = await res.json();
         setPhotos(data.map((item) => item.public_id));
-      } catch (error) {
-        console.error("Greška pri dohvatanju slika:", error);
+      } catch {
+        // greška se prikazuje kroz prazan state
       } finally {
         setLoading(false);
       }

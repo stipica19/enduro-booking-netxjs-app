@@ -22,10 +22,6 @@ export async function GET() {
     createdAt: formatDate(tour.createdAt),
     updatedAt: formatDate(tour.updatedAt),
   }));
-  console.log(
-    "------------------------------------------------------------------------------------------"
-  );
-
   return NextResponse.json(formattedTours);
 }
 

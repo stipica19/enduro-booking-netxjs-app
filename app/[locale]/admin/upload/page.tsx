@@ -2,8 +2,8 @@
 import UploadImage from "@/components/UploadImage";
 
 export default function UploadPage() {
-  const handleUploaded = (url: string) => {
-    console.log("Slika uploadana:", url);
+  const handleUploaded = (_url: string) => {
+    // callback za UploadImage komponentu
   };
 
   return (

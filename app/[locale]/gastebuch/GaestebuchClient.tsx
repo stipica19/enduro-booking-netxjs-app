@@ -28,8 +28,8 @@ export default function GaestebuchClient() {
         const res = await fetch("/api/gastebuch");
         const data = await res.json();
         setComments(data);
-      } catch (error) {
-        console.error("Greška pri dohvatanju komentara:", error);
+      } catch {
+        // silent fail - korisnik vidi prazan spisak
       }
     }
     fetchComments();
@@ -64,8 +64,8 @@ export default function GaestebuchClient() {
       } else {
         alert("Greška pri slanju poruke.");
       }
-    } catch (error) {
-      console.error("Greška pri slanju poruke:", error);
+    } catch {
+      alert("Greška pri slanju poruke.");
     } finally {
       setLoading(false);
     }
@@ -112,8 +112,8 @@ export default function GaestebuchClient() {
       </form>
 
       <div className="w-full max-w-lg mt-8 space-y-4">
-        {comments.slice(0, visibleCount).map((comment, index) => (
-          <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-lg">
+        {comments.slice(0, visibleCount).map((comment) => (
+          <div key={`${comment.createdAt}-${comment.email}`} className="bg-gray-800 p-4 rounded-lg shadow-lg">
             <p className="text-lg font-semibold">
               {comment.name}{" "}
               <span className="text-[12px]">{comment.email}</span>

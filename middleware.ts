@@ -17,10 +17,7 @@ export async function middleware(req: NextRequest) {
   if (pathname.startsWith(`/${locale}/admin`)) {
     const token = req.cookies.get("token")?.value;
 
-   // console.log(" TOKEN IZ COOKIES:", token);
-
     if (!token) {
-      console.log("❌ Token nije pronađen! Preusmjeravamo na /[locale]/login.");
       return NextResponse.redirect(new URL(`/${locale}/login`, req.url));
     }
 
@@ -28,15 +25,11 @@ export async function middleware(req: NextRequest) {
       const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
       const { payload } = await jwtVerify(token, secret);
 
-      console.log("✅ Token je validan:", payload);
-
       // Proveravamo da li korisnik ima admin prava
       if (!payload.isAdmin) {
-        console.log("❌ Korisnik nije admin! Preusmjeravamo na /[locale]/login.");
         return NextResponse.redirect(new URL(`/${locale}/login`, req.url));
       }
-    } catch (error) {
-      console.error("🚨 JWT ERROR:  ", error);
+    } catch {
       return NextResponse.redirect(new URL(`/${locale}/login`, req.url));
     }
   }

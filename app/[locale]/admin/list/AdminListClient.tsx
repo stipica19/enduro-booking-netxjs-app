@@ -32,8 +32,8 @@ export default function AdminListClient() {
         const res = await fetch("/api/anmeldung");
         const data = await res.json();
         setAnmeldungen(data);
-      } catch (error) {
-        console.error("Greška pri dohvatanju prijava:", error);
+      } catch {
+        // greška se prikazuje kroz prazan state
       } finally {
         setLoading(false);
       }

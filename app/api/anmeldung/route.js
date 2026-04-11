@@ -18,7 +18,6 @@ export async function GET() {
 
     return NextResponse.json(anmeldungen);
   } catch (error) {
-    console.log(error);
     return NextResponse.json(
       {
         message: "Greska pri dohvacanju",
@@ -32,7 +31,6 @@ export async function POST(req) {
   try {
     await connectMongo();
     const body = await req.json();
-    console.log("----------------------------------->", body);
 
     // 1. Pronađi turu po ID-u
     const tour = await Tour.findById(body.tour_number._id);
@@ -203,8 +201,7 @@ export async function POST(req) {
       { message: "Anmeldung erfolgreich gespeichert!" },
       { status: 201 }
     );
-  } catch (error) {
-    console.error(error);
+  } catch {
     return NextResponse.json(
       { message: "Fehler beim Speichern der Anmeldung." },
       { status: 500 }

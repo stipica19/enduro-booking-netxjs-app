@@ -42,12 +42,12 @@ export default function SliderImage() {
             loop={true}
             className="w-full mx-auto"
           >
-            {slides.map((src, index) => (
-              <SwiperSlide key={index} className="flex justify-center">
+            {slides.map((src) => (
+              <SwiperSlide key={src.id} className="flex justify-center">
                 <div className="relative w-full h-96">
                   <Image
                     src={src.src}
-                    alt={`Enduro image ${index + 1}`}
+                    alt={src.alt}
                     fill
                     style={{ objectFit: "cover" }}
                     loading="lazy"

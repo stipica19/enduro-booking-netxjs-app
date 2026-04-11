@@ -33,14 +33,14 @@ export default function ReisefuhrerClient() {
 
       {/* Galerija */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 my-10 px-1">
-        {photos.map((src, index) => (
+        {photos.map((src) => (
           <div
-            key={index}
+            key={src}
             className="rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform h-[350px]"
           >
             <Image
               src={src}
-              alt={`Slika ${index + 1}`}
+              alt={src}
               width={250}
               height={350}
               className="w-full h-full object-cover rounded-lg"
@@ -62,14 +62,14 @@ export default function ReisefuhrerClient() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 my-10 px-1">
-        {dario.map((src, index) => (
+        {dario.map((src) => (
           <div
-            key={index}
+            key={src}
             className="rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform h-[350px]"
           >
             <Image
               src={src}
-              alt={`Slika ${index + 1}`}
+              alt={src}
               width={250}
               height={350}
               className="w-full h-full object-cover rounded-lg"
@@ -91,14 +91,14 @@ export default function ReisefuhrerClient() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2 my-10 px-1">
-        {alen.map((src, index) => (
+        {alen.map((src) => (
           <div
-            key={index}
+            key={src}
             className="rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform h-[350px]"
           >
             <Image
               src={src}
-              alt={`Slika ${index + 1}`}
+              alt={src}
               width={250}
               height={350}
               className="w-full h-full object-cover rounded-lg"

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/connect-db";
-import GuestBook from "@/models/GuestBook";
+import GuestBook from "@/models/Guestbook";
 
 export async function GET() {
   try {
@@ -10,8 +10,7 @@ export async function GET() {
     });
 
     return NextResponse.json(messages);
-  } catch (error) {
-    console.error("Greška pri dohvatanju poruka:", error);
+  } catch {
     return NextResponse.json(
       { message: "Greška pri dohvatanju podataka." },
       { status: 500 }
@@ -37,8 +36,7 @@ export async function POST(req) {
       { message: "Poruka uspešno dodana!" },
       { status: 201 }
     );
-  } catch (error) {
-    console.error("Greška pri dodavanju poruke:", error);
+  } catch {
     return NextResponse.json(
       { message: "Greška pri dodavanju poruke." },
       { status: 500 }

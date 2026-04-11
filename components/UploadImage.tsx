@@ -11,17 +11,15 @@ export default function UploadImage({ onUploaded }: UploadImageProps) {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [status, setStatus] = useState<string>("");
 
-  console.log(
-    "Upload preset:",
-    process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
-  );
-
   const handleUpload = async (result: any) => {
-    console.log("aaaaaaaaaaaaaaaaaa", result);
     const uploadedUrl = result?.info?.secure_url;
     const publicId = result?.info?.public_id;
 
-    console.log(uploadedUrl, publicId);
+    if (!uploadedUrl || !publicId) {
+      setStatus("❌ Upload nije uspio, nedostaju podaci.");
+      return;
+    }
+
     setImageUrl(uploadedUrl);
 
     try {
@@ -36,8 +34,7 @@ export default function UploadImage({ onUploaded }: UploadImageProps) {
       } else {
         setStatus("❌ Greška pri spremanju u bazu.");
       }
-    } catch (error) {
-      console.error("Greška:", error);
+    } catch {
       setStatus("❌ Server error.");
     }
   };

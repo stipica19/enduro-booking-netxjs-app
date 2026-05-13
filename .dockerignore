@@ -7,8 +7,9 @@ README.md
 .env.development.local
 .env.test.local
 .env.production.local
-*.log
+_.log
 coverage
 .nyc_output
 .DS_Store
-*.tar.gz
+_.tar.gz
+DEPLOY.md

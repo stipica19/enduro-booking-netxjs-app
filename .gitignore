@@ -43,3 +43,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 enduro-app.tar
+DEPLOY.md

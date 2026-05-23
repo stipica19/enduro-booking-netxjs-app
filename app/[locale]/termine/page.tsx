@@ -16,8 +16,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "de"
-        ? "Termine – Enduro Drift Bosnien"
-        : "Dates – Enduro Drift Bosnia",
+        ? "Termine - Enduro Drift Bosnien"
+        : "Dates - Enduro Drift Bosnia",
     description:
       locale === "de"
         ? "Aktuelle Termine und Verfügbarkeiten für Enduro Touren."
@@ -33,8 +33,8 @@ export async function generateMetadata({
       url: `https://endurodriftbosnien.com/${locale}/termine`,
       title:
         locale === "de"
-          ? "Termine – Enduro Drift Bosnien"
-          : "Dates – Enduro Drift Bosnia",
+          ? "Termine - Enduro Drift Bosnien"
+          : "Dates - Enduro Drift Bosnia",
       description:
         locale === "de"
           ? "Aktuelle Termine und Verfügbarkeiten für Enduro Touren."

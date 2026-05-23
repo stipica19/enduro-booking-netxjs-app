@@ -13,8 +13,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "de"
-        ? "Reiseführer – Enduro Drift Bosnien"
-        : "Travel Guide – Enduro Drift Bosnia",
+        ? "Reiseführer - Enduro Drift Bosnien"
+        : "Travel Guide - Enduro Drift Bosnia",
     description:
       locale === "de"
         ? "Nützliche Informationen und Tipps für Ihre Enduro Reise."
@@ -30,8 +30,8 @@ export async function generateMetadata({
       url: `https://endurodriftbosnien.com/${locale}/reisefuhrer`,
       title:
         locale === "de"
-          ? "Reiseführer – Enduro Drift Bosnien"
-          : "Travel Guide – Enduro Drift Bosnia",
+          ? "Reiseführer - Enduro Drift Bosnien"
+          : "Travel Guide - Enduro Drift Bosnia",
       description:
         locale === "de"
           ? "Nützliche Informationen und Tipps für Ihre Enduro Reise."

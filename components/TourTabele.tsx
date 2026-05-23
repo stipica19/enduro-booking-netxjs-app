@@ -14,6 +14,7 @@ export default function TourTabele() {
 
   const [showAll2025, setShowAll2025] = useState(false);
   const [showAll2026, setShowAll2026] = useState(false);
+  const [showAll2027, setShowAll2027] = useState(false);
   const t = useTranslations();
 
   useEffect(() => {
@@ -23,9 +24,9 @@ export default function TourTabele() {
   }, [dispatch, status]);
 
   // Filtriranje po godini (pretpostavljam da checkIn_date sadrži ISO string)
-  const tours2025 = tours.filter((tour) => tour.checkIn_date.slice(-2) == "25");
-
   const tours2026 = tours.filter((tour) => tour.checkIn_date.slice(-2) == "26");
+
+  const tours2027 = tours.filter((tour) => tour.checkIn_date.slice(-2) == "27");
 
   interface Tour {
     _id: string;
@@ -119,5 +120,10 @@ export default function TourTabele() {
     </div>
   );
 
-  return <>{renderTable(tours2026, showAll2026, setShowAll2026, 2026)}</>;
+  return (
+    <>
+      {renderTable(tours2026, showAll2026, setShowAll2026, 2026)}
+      {renderTable(tours2027, showAll2027, setShowAll2027, 2027)}
+    </>
+  );
 }

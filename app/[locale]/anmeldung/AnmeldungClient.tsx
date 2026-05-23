@@ -134,18 +134,10 @@ export default function AnmeldungClient() {
                         tour_in: tour.checkIn_date,
                         tour_out: tour.checkOut_date,
                       })}
-                      className={
-                        tour.checkIn_date.slice(-2) == "26"
-                          ? "bg-yellow-300 font-bold"
-                          : ""
-                      }
                     >
                       Tour &nbsp;&nbsp; {tour.tour_number} &nbsp;- &nbsp;
                       {tour.checkIn_date}
                       &nbsp;&nbsp; bis &nbsp;&nbsp;{tour.checkOut_date}
-                      {tour.checkIn_date.slice(-2) == "26"
-                        ? " (NEW SEASON!)"
-                        : ""}
                     </option>
                   ))}
               </select>

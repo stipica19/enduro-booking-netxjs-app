@@ -48,14 +48,14 @@ export default async function PrivacyPage({
           <p className="text-neutral-700">
             {isDe ? (
               <>
-                Enduro Drift Bosnien – Silvija Strahimira Kranjcevica, 70280
+                Enduro Drift Bosnien - Silvija Strahimira Kranjcevica, 70280
                 Gornji Vakuf-Uskoplje, Bosnien und Herzegowina
                 <br />
                 E-Mail: endurodriftbosnien@gmail.com / Telefon: +387 63 136 095
               </>
             ) : (
               <>
-                Enduro Drift Bosnia – Silvija Strahimira Kranjcevica, 70280
+                Enduro Drift Bosnia - Silvija Strahimira Kranjcevica, 70280
                 Gornji Vakuf-Uskoplje, Bosnia & Herzegovina
                 <br />
                 Email: endurodriftbosnien@gmail.com / Phone: +387 63 136 095
@@ -93,7 +93,7 @@ export default async function PrivacyPage({
             </li>
             <li>
               {isDe
-                ? "Authentifizierungsdaten (E-Mail + Passwort – verschlüsselt)"
+                ? "Authentifizierungsdaten (E-Mail + Passwort - verschlüsselt)"
                 : "Authentication data (email + password - encrypted)"}
             </li>
           </ul>
@@ -123,8 +123,8 @@ export default async function PrivacyPage({
             </li>
             <li>
               {isDe
-                ? "Analyse & Verbesserung (Google Analytics – sofern aktiv: Art. 6 Abs. 1 lit. f DSGVO)"
-                : "Analytics & improvement (Google Analytics – if active: Art. 6(1)(f) GDPR)"}
+                ? "Analyse & Verbesserung (Google Analytics - sofern aktiv: Art. 6 Abs. 1 lit. f DSGVO)"
+                : "Analytics & improvement (Google Analytics - if active: Art. 6(1)(f) GDPR)"}
             </li>
             <li>
               {isDe
@@ -237,8 +237,8 @@ export default async function PrivacyPage({
           </h2>
           <p className="text-neutral-700">
             {isDe
-              ? "Richten Sie Ihre Anfrage bitte an: endurodriftbosnien@gmail.com – Betreff: Datenschutz"
-              : "Please send requests to: endurodriftbosnien@gmail.com – Subject: Privacy"}
+              ? "Richten Sie Ihre Anfrage bitte an: endurodriftbosnien@gmail.com - Betreff: Datenschutz"
+              : "Please send requests to: endurodriftbosnien@gmail.com - Subject: Privacy"}
           </p>
         </div>
 

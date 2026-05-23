@@ -13,8 +13,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "de"
-        ? "Galerie – Enduro Drift Bosnien"
-        : "Gallery – Enduro Drift Bosnia",
+        ? "Galerie - Enduro Drift Bosnien"
+        : "Gallery - Enduro Drift Bosnia",
     description:
       locale === "de"
         ? "Fotos und Eindrücke unserer Enduro Touren in Bosnien."
@@ -30,8 +30,8 @@ export async function generateMetadata({
       url: `https://endurodriftbosnien.com/${locale}/galerie`,
       title:
         locale === "de"
-          ? "Galerie – Enduro Drift Bosnien"
-          : "Gallery – Enduro Drift Bosnia",
+          ? "Galerie - Enduro Drift Bosnien"
+          : "Gallery - Enduro Drift Bosnia",
       description:
         locale === "de"
           ? "Fotos und Eindrücke unserer Enduro Touren in Bosnien."

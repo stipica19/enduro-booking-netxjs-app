@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10">
         <Image
           src="/hero-bild.webp"
-          alt="Enduro Drift Bosnien – Enduro Touren in Bosnien"
+          alt="Enduro Drift Bosnien - Enduro Touren in Bosnien"
           fill
           priority
           fetchPriority="high"

@@ -9,12 +9,14 @@ import Image from "next/image";
 const slides = [
   { id: 1, src: "/bg_termine.webp", alt: "Enduro Tour 1" },
   { id: 2, src: "/prokosko.png", alt: "Enduro Tour 2" },
+  { id: 9, src: "/enduro15.avif", alt: "Enduro Tour 3" },
   { id: 3, src: "/enduro-nebo.webp", alt: "Enduro Tour 2" },
   { id: 4, src: "/slider4.webp", alt: "Enduro Tour 2" },
   { id: 5, src: "/rostilj.webp", alt: "Enduro Tour 2" },
   { id: 6, src: "/enduro-mini6.webp", alt: "Enduro Tour 3" },
   { id: 7, src: "/enduro-klopa.webp", alt: "Enduro Tour 3" },
   { id: 8, src: "/hero-bild.webp", alt: "Enduro Tour 3" },
+  
 ];
 
 export default function SliderImage() {

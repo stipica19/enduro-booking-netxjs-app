@@ -6,7 +6,7 @@ import Tour from "../../../models/Tour";
 export async function GET() {
   await connectMongo();
   const currentDate = new Date();
-  const limitDate = new Date("2026-12-12T18:00:00.000Z");
+  const limitDate = new Date("2027-12-31T23:59:59.000Z");
 
   const tours = await Tour.find({
     checkOut_date: {

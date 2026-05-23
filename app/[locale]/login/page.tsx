@@ -36,7 +36,7 @@ export default function LoginPage() {
           isAdmin: data.user.isAdmin,
         })
       );
-      router.push(`/${locale}/admin`);
+      router.push(`/${locale}/admin/list`);
     } else {
       setError(data.message);
     }

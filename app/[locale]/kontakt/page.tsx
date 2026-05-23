@@ -14,8 +14,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "de"
-        ? "Kontakt – Enduro Drift Bosnien"
-        : "Contact – Enduro Drift Bosnia",
+        ? "Kontakt - Enduro Drift Bosnien"
+        : "Contact - Enduro Drift Bosnia",
     description:
       locale === "de"
         ? "Kontaktieren Sie uns für Fragen zu Enduro Touren."
@@ -31,8 +31,8 @@ export async function generateMetadata({
       url: `https://endurodriftbosnien.com/${locale}/kontakt`,
       title:
         locale === "de"
-          ? "Kontakt – Enduro Drift Bosnien"
-          : "Contact – Enduro Drift Bosnia",
+          ? "Kontakt - Enduro Drift Bosnien"
+          : "Contact - Enduro Drift Bosnia",
       description:
         locale === "de"
           ? "Kontaktieren Sie uns für Fragen zu Enduro Touren."

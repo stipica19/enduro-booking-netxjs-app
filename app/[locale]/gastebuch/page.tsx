@@ -13,8 +13,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "de"
-        ? "Gästebuch – Enduro Drift Bosnien"
-        : "Guestbook – Enduro Drift Bosnia",
+        ? "Gästebuch - Enduro Drift Bosnien"
+        : "Guestbook - Enduro Drift Bosnia",
     description:
       locale === "de"
         ? "Lesen und schreiben Sie Einträge in unserem Gästebuch."
@@ -30,8 +30,8 @@ export async function generateMetadata({
       url: `https://endurodriftbosnien.com/${locale}/gastebuch`,
       title:
         locale === "de"
-          ? "Gästebuch – Enduro Drift Bosnien"
-          : "Guestbook – Enduro Drift Bosnia",
+          ? "Gästebuch - Enduro Drift Bosnien"
+          : "Guestbook - Enduro Drift Bosnia",
       description:
         locale === "de"
           ? "Lesen und schreiben Sie Einträge in unserem Gästebuch."

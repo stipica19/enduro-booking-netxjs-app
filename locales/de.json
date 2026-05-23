@@ -1,5 +1,5 @@
 {
-  "hero-text": "Erleben Sie das ultimative Enduro-Abenteuer in den atemberaubenden Bergen von Bosnien und Herzegowina. Egal, ob Sie Anfänger oder erfahrener Fahrer sind – wir bieten unvergessliche Touren durch unberührte Natur und extreme Offroad-Strecken.",
+  "hero-text": "Erleben Sie das ultimative Enduro-Abenteuer in den atemberaubenden Bergen von Bosnien und Herzegowina. Egal, ob Sie Anfänger oder erfahrener Fahrer sind - wir bieten unvergessliche Touren durch unberührte Natur und extreme Offroad-Strecken.",
   "hero_title": "Geführte Enduro-Touren in Bosnien",
   "hero_subtitle": "Legal. Sicher. Professionell. Für Anfänger & erfahrene Fahrer",
   "hero_points": [
@@ -19,10 +19,10 @@
   "about_value_line": "Zentralbosnien • geführte Touren • kleine Gruppen • top Bewertungen",
   "about_p1": "Grüße an alle Enduro-Fans!",
   "about_p2": "Wenn Sie dem Stress des Alltags entfliehen möchten oder einen erstklassigen Enduro-Urlaub für Körper und Seele suchen, sind Sie bei Enduro Drift Bosnien genau richtig.",
-  "about_p3": "Unser Standort liegt im Herzen Bosniens und Herzegowinas – umgeben von unberührter Natur, Bergen, Seen und abwechslungsreichen Trails.",
+  "about_p3": "Unser Standort liegt im Herzen Bosniens und Herzegowinas - umgeben von unberührter Natur, Bergen, Seen und abwechslungsreichen Trails.",
   "about_fact_1": "Standort: Gornji Vakuf (ca. 2,5 Std. von Sarajevo)",
   "about_fact_2": "Berge bis 2.100 m & abwechslungsreiche Trails",
-  "about_fact_3": "Für Anfänger bis Profi – Route angepasst an dein Level",
+  "about_fact_3": "Für Anfänger bis Profi - Route angepasst an dein Level",
   "about_fact_4": "Deutsch- & englischsprachige Guides",
   "about_cta_prices": "Preise ansehen",
   "about_cta_request": "Tour anfragen",
@@ -31,7 +31,7 @@
   "star": "Ausgezeichnete Bewertungen",
   "prices_title": "Preis:",
   "book_now": "Buche jetzt!",
-  "akcija": "📢 SAISON 2026: MEHR TOUREN, MEHR ABENTEUER – JETZT BUCHEN! 🏍️🔥",
+  "akcija": "📢 SAISON 2027: MEHR TOUREN, MEHR ABENTEUER - JETZT BUCHEN! 🏍️🔥",
   "tour_title1": "Wählen Sie Ihr <highlight>Abenteuer</highlight>",
   "tour_p": "Von anfängerfreundlichen Routen bis hin zu extremen Herausforderungen - finden Sie die perfekte Tour für Ihr Niveau",
   "tour_nicht_sicher": "Nicht sicher, welche Tour für Sie geeignet ist?",
@@ -208,7 +208,7 @@
   "success_message": "Ihre Anmeldung war erfolgreich!",
   "error_message": "Es gab einen Fehler bei der Anmeldung.",
   "termine_t": "Planen Sie Ihr nächstes Offroad-Abenteuer!",
-  "termine_p": "Wählen Sie eine der verfügbaren Touren und reservieren Sie Ihren Termin rechtzeitig.Plätze sind begrenzt – buchen Sie jetzt und erleben Sie die ultimative Offroad-Erfahrung!",
+  "termine_p": "Wählen Sie eine der verfügbaren Touren und reservieren Sie Ihren Termin rechtzeitig.Plätze sind begrenzt - buchen Sie jetzt und erleben Sie die ultimative Offroad-Erfahrung!",
   "termine_t1": "🚀 Sichern Sie sich Ihren Platz für eine unvergessliche Enduro-Tour durch Bosnien!",
   "termine_p2": "📅 Tour-Daten und Verfügbarkeit finden Sie unten:",
 
@@ -220,7 +220,7 @@
   "alen_t": "Anel Tihak - Pro Rider",
   "alen_p": "Anel ist ein erfahrener Pro Rider, bekannt für seine unglaubliche Technik und seinen Mut auf den anspruchsvollsten Enduro-Strecken. Mit jahrelanger Erfahrung und der Teilnahme an zahlreichen Wettbewerben ist er für viele Fahrer ein Vorbild geworden. Seine Geschwindigkeit, Präzision und Fähigkeit, Hindernisse zu überwinden, machen ihn zu einem der Besten im Team. Neben seinen erstklassigen Fahrkünsten ist er immer bereit, Tipps zu geben und andere zu motivieren, ihre eigenen Grenzen zu überschreiten.",
   "gallery_title": "Enduro Drift Bosnien Galerie",
-  "gallery_p": "Durchstöbern Sie spannende Momente unserer Offroad-Motorradtouren! Von schlammigen Wegen bis hin zu majestätischen Berggipfeln – das ist der Geist von Enduro Drift Bosnien.",
+  "gallery_p": "Durchstöbern Sie spannende Momente unserer Offroad-Motorradtouren! Von schlammigen Wegen bis hin zu majestätischen Berggipfeln - das ist der Geist von Enduro Drift Bosnien.",
 
   "whyChooseUs": {
     "title": "Warum uns <highlight>wählen</highlight>?",
@@ -228,7 +228,7 @@
     "features": [
       {
         "title": "Premium Motorräder",
-        "description": "Neueste BETA-Modelle 2023 – BETA 300 RR und BETA 300 XTRAINER, bereit für jede Herausforderung"
+        "description": "Neueste BETA-Modelle 2023 - BETA 300 RR und BETA 300 XTRAINER, bereit für jede Herausforderung"
       },
       {
         "title": "Einzigartige Lage",
@@ -248,7 +248,7 @@
       },
       {
         "title": "Für alle Erfahrungsstufen",
-        "description": "Von Anfängern bis zu erfahrenen Fahrern – wir passen die Touren Ihrem Wissens- und Erfahrungsniveau an"
+        "description": "Von Anfängern bis zu erfahrenen Fahrern - wir passen die Touren Ihrem Wissens- und Erfahrungsniveau an"
       }
     ]
   },
@@ -266,11 +266,11 @@
     "enduroOptions": {
     "hard": {
       "title": "Hard Enduro",
-      "description": "Herausforderndes Gelände, technische Trails und steile Anstiege – 30–40 km pro Tag"
+      "description": "Herausforderndes Gelände, technische Trails und steile Anstiege - 30-40 km pro Tag"
     },
     "medium": {
       "title": "Medium Enduro",
-      "description": "Längere, landschaftlich reizvolle Strecken mit gemischtem Schwierigkeitsgrad – 80–100 km pro Tag"
+      "description": "Längere, landschaftlich reizvolle Strecken mit gemischtem Schwierigkeitsgrad - 80-100 km pro Tag"
     }
   },
   "blog_title": "Enduro Drift Bosnien Blog",

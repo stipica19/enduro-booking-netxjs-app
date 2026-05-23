@@ -15,6 +15,7 @@ export async function GET(req) {
     const { payload } = await jwtVerify(token, secret);
 
     const user = await User.findById(payload.id).select("email isAdmin");
+    if (!user) return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
 
     return NextResponse.json({
       email: user.email,

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "TURBOPACK=0 next build",
+    "build": "next build --no-turbopack",
     "start": "next start",
     "lint": "next lint",
     "build:docker": "NODE_OPTIONS='--max-old-space-size=512' next build"
@@ -44,7 +44,7 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.15",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^3.4.19",
     "typescript": "^6"
   },
   "browserslist": [

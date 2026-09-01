@@ -120,13 +120,9 @@ const Navbar = () => {
             className={`flex mr-2 items-center gap-1 px-3 py-2 rounded-md ${
               language === lang.code ? "bg-gray-200" : "bg-gray-100"
             }`}
+            aria-label={lang.label}
           >
-            <Image
-              src={lang?.icon}
-              alt="language icon"
-              width={24}
-              height={24}
-            />
+            <Image src={lang?.icon} alt="" width={24} height={24} />
           </button>
         ))}
       </div>
@@ -163,7 +159,12 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden">
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="lg:hidden"
+        aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+        aria-expanded={menuOpen}
+      >
         <Menu width={32} height={32} className="cursor-pointer" />
       </button>
 
@@ -239,13 +240,9 @@ const Navbar = () => {
                 className={`flex flex-col items-center gap-3 px-3 py-2 rounded-md ${
                   language === lang.code ? "bg-gray-200" : "bg-gray-100"
                 }`}
+                aria-label={lang.label}
               >
-                <Image
-                  src={lang?.icon}
-                  alt="language icon"
-                  width={24}
-                  height={24}
-                />
+                <Image src={lang?.icon} alt="" width={24} height={24} />
               </button>
             ))}
           </div>

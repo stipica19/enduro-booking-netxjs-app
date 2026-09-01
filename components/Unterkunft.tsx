@@ -20,10 +20,10 @@ export default function Unterkunft() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6 lg:px-20 text-center">
         {/* Naslov */}
-        <h3 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+        <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
           {t("hotel_title")}
           <span className="absolute bottom-0 left-0 w-16 h-1 bg-red-600"></span>
-        </h3>
+        </h2>
         <p className="text-sm sm:text-lg mt-2 text-gray-700 text-left mx-auto leading-relaxed md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
           {t("hotel")}
         </p>

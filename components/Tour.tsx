@@ -261,12 +261,14 @@ const Tour = () => {
 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <Link href={`/${locale}/anmeldung`} className="block">
-                    <button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                      <span className="flex items-center tracking-widest justify-center gap-2">
-                        {t("dugme")}
-                      </span>
-                    </button>
+                  {/* Link stiliziran kao gumb – <button> unutar <a> je nevaljan HTML */}
+                  <Link
+                    href={`/${locale}/anmeldung`}
+                    className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  >
+                    <span className="flex items-center tracking-widest justify-center gap-2">
+                      {t("dugme")}
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -310,10 +312,11 @@ const Tour = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-300 mb-6">{t("tour_nicht_sicher")}</p>
-          <Link href={`/${locale}/kontakt`} className="block">
-            <button className="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-full border border-gray-600 hover:border-red-500 transition-all duration-300">
-              {t("tour_btn")}
-            </button>
+          <Link
+            href={`/${locale}/kontakt`}
+            className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-full border border-gray-600 hover:border-red-500 transition-all duration-300"
+          >
+            {t("tour_btn")}
           </Link>
         </div>
       </div>

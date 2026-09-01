@@ -66,6 +66,9 @@ jobs:
               --restart unless-stopped \
               --network app-network \
               -p 3000:3000 \
+              --log-driver json-file \
+              --log-opt max-size=10m \
+              --log-opt max-file=3 \
               --memory="768m" \
               --memory-swap="1g" \
               --cpus="1" \
@@ -74,6 +77,16 @@ jobs:
               --dns 1.1.1.1 \
               --env-file /root/.env \
               ghcr.io/stipica19/enduro-booking-netxjs-app:latest
+
+            # Ispraznimo log fajlove svih kontejnera (npr. mongo) koji zive izmedju
+            # deployeva. Koristimo truncate, a ne rm: Docker drzi fajl otvorenim, pa
+            # brisanje ne oslobodi prostor i razbije "docker logs".
+            for cid in $(docker ps -aq); do
+              logfile=$(docker inspect --format='{{.LogPath}}' "$cid" 2>/dev/null || true)
+              if [ -n "$logfile" ] && [ -f "$logfile" ]; then
+                truncate -s 0 "$logfile" || true
+              fi
+            done
 
             docker image prune -af
             docker container prune -f

@@ -38,15 +38,18 @@ const About = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <a href="#tours" className="btn btn--secondary">
-              <button className="rounded-xl uppercase bg-white/90 hover:bg-white text-gray-900 font-semibold px-2 md:px-4 py-1 md:py-2 shadow-md border border-white/60 backdrop-blur-sm">
-                {t("about_cta_prices")}
-              </button>
+            {/* Linkovi stilizirani kao gumbi – <button> unutar <a> je nevaljan HTML */}
+            <a
+              href="#tours"
+              className="btn btn--secondary rounded-xl uppercase text-center bg-white/90 hover:bg-white text-gray-900 font-semibold px-2 md:px-4 py-1 md:py-2 shadow-md border border-white/60 backdrop-blur-sm"
+            >
+              {t("about_cta_prices")}
             </a>
-            <Link href={`/${locale}/anmeldung`}>
-              <button className="rounded-xl uppercase bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold px-2 md:px-4 py-1 md:py-2 shadow-lg tracking-widest">
-                {t("about_cta_request")}{" "}
-              </button>{" "}
+            <Link
+              href={`/${locale}/anmeldung`}
+              className="rounded-xl uppercase text-center bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold px-2 md:px-4 py-1 md:py-2 shadow-lg tracking-widest"
+            >
+              {t("about_cta_request")}
             </Link>
           </div>
         </div>

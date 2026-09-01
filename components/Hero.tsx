@@ -27,8 +27,9 @@ const Hero = () => {
       {/* Content container */}
       <div className="relative z-20 mx-auto h-full max-w-7xl px-6 flex items-center">
         <div className="flex flex-1 flex-col xl:w-1/2 text-white">
+          {/* Promo oznaka – namjerno nije heading, da ne razbija redoslijed h1/h2 */}
           <div className="bg-red-600 text-white font-bold text-center py-2 px-4 rounded-md text-sm md:text-base animate-bounce w-fit mb-1">
-            <h3>{t("akcija")}</h3>
+            <p>{t("akcija")}</p>
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
             {t("hero_title")}
@@ -83,15 +84,18 @@ const Hero = () => {
           </div>
 
           <div className="mt-8 flex w-full flex-col sm:flex-row gap-4">
-            <Link href={`/${locale}/anmeldung`}>
-              <button className="rounded-xl uppercase bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold px-6 md:px-8 py-4 md:py-5 shadow-lg tracking-widest">
-                {t("hero_btn_primary")}
-              </button>
+            {/* Linkovi stilizirani kao gumbi – <button> unutar <a> je nevaljan HTML */}
+            <Link
+              href={`/${locale}/anmeldung`}
+              className="rounded-xl uppercase text-center bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold px-6 md:px-8 py-4 md:py-5 shadow-lg tracking-widest"
+            >
+              {t("hero_btn_primary")}
             </Link>
-            <Link href={`/${locale}#tours`}>
-              <button className="rounded-xl uppercase bg-white/90 hover:bg-white text-gray-900 font-semibold px-6 md:px-8 py-4 md:py-5 shadow-md border border-white/60 backdrop-blur-sm">
-                {t("hero_btn_secondary")}
-              </button>
+            <Link
+              href={`/${locale}#tours`}
+              className="rounded-xl uppercase text-center bg-white/90 hover:bg-white text-gray-900 font-semibold px-6 md:px-8 py-4 md:py-5 shadow-md border border-white/60 backdrop-blur-sm"
+            >
+              {t("hero_btn_secondary")}
             </Link>
           </div>
         </div>

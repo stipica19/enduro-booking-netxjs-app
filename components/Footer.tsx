@@ -92,7 +92,9 @@ export default function Footer({ locale = "de" }: { locale?: string }) {
             <a
               href="https://www.tiktok.com/@endurodriftbosnien"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-indigo-600 text-3xl"
+              aria-label="TikTok profil"
             >
               <FaTiktok />
             </a>

@@ -15,9 +15,9 @@ export default function Rules() {
     <section className="py-16 bg-gray-200">
       <div className="container mx-auto px-6 lg:px-20 text-center">
         {/* Naslov */}
-        <h3 className="text-4xl font-bold text-gray-900 mb-8">
+        <h2 className="text-4xl font-bold text-gray-900 mb-8">
           📜 {t("rule_title")}
-        </h3>
+        </h2>
 
         {/* Lista pravila */}
         <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 lg:p-10">

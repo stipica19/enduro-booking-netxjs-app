@@ -13,7 +13,12 @@ const anmeldungSchema = new mongoose.Schema(
     },
     email: { type: String, required: true },
     name: { type: String, required: true },
-    number_person: { type: Number, required: true },
+    number_person: { type: Number, required: true, min: 3 },
+    // Broj nocenja ovisi o vrsti ture (Tour 1 = 4, Tour 2 = 5, Tour 3 = 7)
+    nights: { type: Number, required: true, min: 1 },
+    // Prvo nocenje je uvijek subota, odlazak = dolazak + broj nocenja
+    checkIn_date: { type: Date, required: true },
+    checkOut_date: { type: Date, required: true },
     address: { type: String },
     phone: { type: String },
     transport: { type: String, required: true },

@@ -2,6 +2,7 @@ import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { Roboto } from "next/font/google";
 import Script from "next/script";
+import type { Metadata, Viewport } from "next";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -9,8 +10,66 @@ const roboto = Roboto({
   display: "swap",
 });
 
-export const metadata = {
+const SITE_TITLE =
+  "Enduro Touren in Bosnien - Abenteuer Enduro Urlaub & Motorradreisen";
+const SITE_DESCRIPTION =
+  "Erleben Sie unvergessliche Enduro Touren in Bosnien! Geführte Motorradreisen durch die wunderschönen Berge der Balkanhalbinsel. Jetzt buchen!";
+const SITE_IMAGE =
+  "https://res.cloudinary.com/stipica/image/upload/c_limit,w_2048/f_auto/q_auto/v1/Your_paragraph_text_1_jabt8n?_a=BAVAZGBz0";
+
+// Zadane vrijednosti za cijelu stranicu – svaka stranica ih moze pregaziti svojim
+// generateMetadata. Canonical i og:url se NE postavljaju ovdje, nego po stranici,
+// inace svaka stranica dobije dva canonicala (npr. "/" i "/de").
+export const metadata: Metadata = {
   metadataBase: new URL("https://endurodriftbosnien.com"),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords:
+    "enduro tours bosnien, motorradreisen balkan, enduro touren, abenteuer motorrad, bosnia enduro, geführte motorradtouren, offroad bosnien",
+  authors: [{ name: "Enduro Drift Bosnien" }],
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+  },
+  icons: {
+    icon: [{ url: "/logo.png", sizes: "32x32" }],
+    apple: "/logo.png",
+  },
+  formatDetection: { telephone: false },
+  openGraph: {
+    type: "website",
+    siteName: "Enduro Drift Bosnien",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    locale: "de_DE",
+    images: [
+      {
+        url: SITE_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Enduro Tours in den Bergen von Bosnien",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [SITE_IMAGE],
+  },
+  other: {
+    "geo.region": "BA",
+    "geo.country": "Bosnia and Herzegovina",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -23,88 +82,8 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="de">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* Primary Meta Tags */}
-        <title>
-          Enduro Touren in Bosnien - Abenteuer Enduro Urlaub & Motorradreisen
-        </title>
-        <meta
-          name="title"
-          content="Enduro Tours Bosnien | Abenteuer Enduro Touren & Motorradreisen"
-        />
-        <meta
-          name="description"
-          content="Erleben Sie unvergessliche Enduro Touren in Bosnien! Geführte Motorradreisen durch die wunderschönen Berge der Balkanhalbinsel. Jetzt buchen!"
-        />
-        <meta
-          name="keywords"
-          content="enduro tours bosnien, motorradreisen balkan, enduro touren, abenteuer motorrad, bosnia enduro, geführte motorradtouren, offroad bosnien"
-        />
-        <meta name="author" content="Enduro Drift Bosnien" />
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
-        <meta name="language" content="de" />
-        <meta name="geo.region" content="BA" />
-        <meta name="geo.country" content="Bosnia and Herzegovina" />
-
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://endurodriftbosnien.com" />
-
-        {/* Favicon */}
-        <link rel="icon" href="/logo.png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/logo.png" />
-        <meta name="theme-color" content="#000000" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Enduro Drift Bosnien" />
-        <meta
-          property="og:title"
-          content="Enduro Tours Bosnien | Abenteuer Enduro Touren & Motorradreisen"
-        />
-        <meta
-          property="og:description"
-          content="Erleben Sie unvergessliche Enduro Touren in Bosnien! Geführte Motorradreisen durch die wunderschönen Berge der Balkanhalbinsel. Jetzt buchen!"
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/stipica/image/upload/c_limit,w_2048/f_auto/q_auto/v1/Your_paragraph_text_1_jabt8n?_a=BAVAZGBz0"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
-        <meta
-          property="og:image:alt"
-          content="Enduro Tours in den Bergen von Bosnien"
-        />
-        <meta property="og:url" content="https://endurodriftbosnien.com" />
-        <meta property="og:locale" content="de_DE" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Enduro Tours Bosnien | Abenteuer Enduro Touren & Motorradreisen"
-        />
-        <meta
-          name="twitter:description"
-          content="Erleben Sie unvergessliche Enduro Touren in Bosnien! Geführte Motorradreisen durch die wunderschönen Berge der Balkanhalbinsel."
-        />
-        <meta
-          name="twitter:image"
-          content="https://res.cloudinary.com/stipica/image/upload/c_limit,w_2048/f_auto/q_auto/v1/Your_paragraph_text_1_jabt8n?_a=BAVAZGBz0"
-        />
-        <meta
-          name="twitter:image:alt"
-          content="Enduro Tours in den Bergen von Bosnien"
-        />
-
-        {/* Additional SEO */}
-        <meta name="format-detection" content="telephone=no" />
+        {/* Meta tagovi (title, description, canonical, og:*, twitter:*) dolaze iz
+            metadata exporta – ovdje ostaju samo stvari koje metadata ne pokriva */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

@@ -25,6 +25,37 @@ export async function GET() {
   }
 }
 
+// Broj nocenja po vrsti ture
+const NIGHTS_BY_TOUR_TYPE = {
+  "Tour 1": 4,
+  "Tour 2": 5,
+  "Tour 3": 7,
+};
+
+// Prvo nocenje je uvijek subota – ako check-in ture nije subota, pomakni na prvu iducu subotu
+const getSaturdayCheckIn = (dateString) => {
+  const checkIn = new Date(dateString);
+  checkIn.setUTCHours(0, 0, 0, 0);
+  const daysUntilSaturday = (6 - checkIn.getUTCDay() + 7) % 7;
+  checkIn.setUTCDate(checkIn.getUTCDate() + daysUntilSaturday);
+  return checkIn;
+};
+
+const addDays = (date, days) => {
+  const result = new Date(date);
+  result.setUTCDate(result.getUTCDate() + days);
+  return result;
+};
+
+const formatTourDate = (date, locale = "de-DE") =>
+  date.toLocaleDateString(locale, {
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
 export async function POST(req) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
@@ -48,12 +79,30 @@ export async function POST(req) {
         { status: 400 }
       );
     }
+    // 3. Izracunaj termin boravka: prvo nocenje subota + broj nocenja po vrsti ture
+    const nights = NIGHTS_BY_TOUR_TYPE[body.tour_type];
+
+    if (!nights) {
+      return NextResponse.json(
+        { message: "Ungültige Tour-Art." },
+        { status: 400 }
+      );
+    }
+
+    const checkInDate = getSaturdayCheckIn(tour.checkIn_date);
+    const checkOutDate = addDays(checkInDate, nights);
+    const checkInText = formatTourDate(checkInDate);
+    const checkOutText = formatTourDate(checkOutDate);
+
     const neueAnmeldung = new Anmeldung({
       tour_number: body.tour_number._id,
       tour_type: body.tour_type,
       email: body.email,
       name: body.fullName,
       number_person: body.numPeople,
+      nights,
+      checkIn_date: checkInDate,
+      checkOut_date: checkOutDate,
       address: body.address,
       phone: body.phone,
       transport: body.transport,
@@ -106,9 +155,19 @@ export async function POST(req) {
                       <td style="padding: 8px; border: 1px solid #ddd;"><strong>Tour:</strong></td>
                       <td style="padding: 8px; border: 1px solid #ddd;">${
                         body.tour_number.tour_number
-                      } (${body.tour_type}) od ${body.tour_number.tour_in} do ${
-        body.tour_number.tour_out
-      } </td>
+                      } (${body.tour_type})</td>
+                  </tr>
+                  <tr>
+                      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Dolazak (1. noćenje):</strong></td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">${checkInText}</td>
+                  </tr>
+                  <tr>
+                      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Odlazak:</strong></td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">${checkOutText}</td>
+                  </tr>
+                  <tr>
+                      <td style="padding: 8px; border: 1px solid #ddd;"><strong>Broj noćenja:</strong></td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">${nights}</td>
                   </tr>
                   <tr>
                       <td style="padding: 8px; border: 1px solid #ddd;"><strong>Adresa:</strong></td>
@@ -170,7 +229,10 @@ export async function POST(req) {
             <div style="background-color: #f8f8f8; padding: 15px; border-radius: 5px; margin-top: 20px;">
                 <p style="margin: 0; font-size: 15px;"><strong>Details Ihrer Anmeldung:</strong></p>
                 <p style="font-style: italic; color: #333;">
-                    Tour: ${body.tour_number.tour_in} (${body.tour_type})<br>
+                    Tour: ${body.tour_number.tour_number} (${body.tour_type})<br>
+                    Anreise (1. Übernachtung): ${checkInText}<br>
+                    Abreise: ${checkOutText}<br>
+                    Übernachtungen: ${nights}<br>
                     Anzahl Personen: ${body.numPeople}<br>
                     Transport: ${body.transport}<br>
                     Rent a Bike: ${body.rentaBike ? "Ja" : "Nein"}

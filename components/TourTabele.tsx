@@ -122,6 +122,21 @@ export default function TourTabele() {
 
   return (
     <>
+      {/* Napomena o dolasku i odlasku – vrijedi za sve termine */}
+      <div className="mt-8 bg-white rounded-lg shadow-lg border-l-4 border-red-700 p-4 text-left">
+        <p className="font-bold text-gray-900 text-sm sm:text-base">
+          {t("stay_note_title")}
+        </p>
+        <p className="mt-2 text-gray-700 text-xs sm:text-sm">
+          {t("stay_note_intro")}
+        </p>
+        <ul className="mt-2 list-disc list-inside text-gray-700 text-xs sm:text-sm space-y-1">
+          <li>{t("stay_note_tour1")}</li>
+          <li>{t("stay_note_tour2")}</li>
+          <li>{t("stay_note_tour3")}</li>
+        </ul>
+      </div>
+
       {renderTable(tours2026, showAll2026, setShowAll2026, 2026)}
       {renderTable(tours2027, showAll2027, setShowAll2027, 2027)}
     </>

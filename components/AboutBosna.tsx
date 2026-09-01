@@ -249,6 +249,8 @@ export default function AboutBosna() {
                     src={src.image}
                     alt={`Hotel image ${index + 1}`}
                     fill
+                    // Slider: 1 slide na mobitelu, 2 od 768px, 4 od 1024px
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                     style={{ objectFit: "cover" }}
                     className="rounded-lg shadow-lg"
                     loading="lazy"

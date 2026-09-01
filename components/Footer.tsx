@@ -50,6 +50,8 @@ export default function Footer({ locale = "de" }: { locale?: string }) {
                   src={logo}
                   alt={`Partner ${index + 1}`}
                   fill
+                  // Logo je uvijek u kontejneru 80x80 (w-20 h-20)
+                  sizes="80px"
                   style={{ objectFit: "contain" }}
                 />
               </div>

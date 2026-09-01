@@ -20,13 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const urls: MetadataRoute.Sitemap = [];
 
-    // Root landing (stavi samo ako stvarno postoji kao stranica ili ako ne redirecta)
-    urls.push({
-        url: `${BASE_URL}/`,
-        lastModified: now,
-        changeFrequency: "weekly",
-        priority: 1.0,
-    });
+    // Root "/" se preusmjerava na /de (next-intl localePrefix: always), pa ga ne
+    // stavljamo u sitemap – u njemu idu samo konacni URL-ovi s canonicalom.
 
     for (const locale of locales) {
         for (const path of staticPaths) {

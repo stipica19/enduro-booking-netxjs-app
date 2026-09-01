@@ -212,6 +212,12 @@
   "termine_t1": "🚀 Sichern Sie sich Ihren Platz für eine unvergessliche Enduro-Tour durch Bosnien!",
   "termine_p2": "📅 Tour-Daten und Verfügbarkeit finden Sie unten:",
 
+  "stay_note_title": "ℹ️ Hinweis zu An- und Abreise",
+  "stay_note_intro": "Die Anreise ist immer samstags – die erste Übernachtung ist die Nacht von Samstag auf Sonntag. Der Abreisetag richtet sich nach der gewählten Tour-Art:",
+  "stay_note_tour1": "Tour 1 – 4 Übernachtungen: Abreise am Mittwoch",
+  "stay_note_tour2": "Tour 2 – 5 Übernachtungen: Abreise am Donnerstag",
+  "stay_note_tour3": "Tour 3 – 7 Übernachtungen: Abreise am Samstag",
+
   "seo_tour_title": "Enduro Drift Bosnien | Tour-Termine ",
   "seo_tour_description": "Hier finden Sie alle verfügbaren Termine für unsere Enduro-Touren in Bosnien.",
   "seo_tour_url": "https://endurodriftbosnien.com/de/termine",

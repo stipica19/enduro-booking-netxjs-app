@@ -18,7 +18,7 @@ export default function AnmeldungClient() {
   const [transport, setTransport] = useState<string | null>(null);
   const [email, setEmail] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
-  const [numPeople, setNumPeople] = useState<number>(1);
+  const [numPeople, setNumPeople] = useState<string>("3");
   const [address, setAddress] = useState<string>("");
   const [rentaBike, setRent] = useState<boolean>(false);
   const [phone, setPhone] = useState<string>("");
@@ -38,12 +38,19 @@ export default function AnmeldungClient() {
     setError(null);
     setSuccess(null);
 
+    // Broj ljudi je minimalno 3 – klamp tek na submitu, da se polje moze normalno tipkati
+    const parsedNumPeople = Number(numPeople);
+    const finalNumPeople = Number.isFinite(parsedNumPeople)
+      ? Math.max(3, Math.floor(parsedNumPeople))
+      : 3;
+    setNumPeople(String(finalNumPeople));
+
     const formData = {
       tour_number: selectedTour,
       tour_type: selectedType,
       email,
       fullName,
-      numPeople,
+      numPeople: finalNumPeople,
       address,
       phone,
       transport,
@@ -135,9 +142,7 @@ export default function AnmeldungClient() {
                         tour_out: tour.checkOut_date,
                       })}
                     >
-                      Tour &nbsp;&nbsp; {tour.tour_number} &nbsp;- &nbsp;
-                      {tour.checkIn_date}
-                      &nbsp;&nbsp; bis &nbsp;&nbsp;{tour.checkOut_date}
+                      Tour &nbsp;&nbsp; {tour.tour_number} 
                     </option>
                   ))}
               </select>
@@ -194,14 +199,24 @@ export default function AnmeldungClient() {
             {/* Broj ljudi */}
             <div>
               <label className="block text-gray-700 font-semibold">
-                {t("num_people")}
+                {t("num_people")}  (min. 3)
               </label>
               <input
                 type="number"
                 className="w-full p-3 border border-gray-300 rounded-lg"
                 placeholder={t("num_people_placeholder")}
                 value={numPeople}
-                onChange={(e) => setNumPeople(Number(e.target.value))}
+                onChange={(e) => setNumPeople(e.target.value)}
+                onBlur={() => {
+                  const val = Number(numPeople);
+                  setNumPeople(
+                    Number.isFinite(val) && numPeople.trim() !== ""
+                      ? String(Math.max(3, Math.floor(val)))
+                      : "3"
+                  );
+                }}
+                min={3}
+                step={1}
                 required
               />
             </div>
